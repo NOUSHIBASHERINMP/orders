@@ -1,0 +1,59 @@
+<html>
+  <body>
+    <h1 onclick="order_details()" style="text-align: center">
+      <u>Click me to know the higher order </u>
+    </h1>
+    <h1 id="content"></h1>
+
+    <script>
+      var order1 = {
+        orderNumber: 10011,
+        customerName: "Muhammed",
+        customerMobile: "+911223331",
+        totalAmount: 25000,
+      };
+
+      var order2 = {
+        orderNumber: 3411,
+        customerName: "Rajesh",
+        customerMobile: "+94545331",
+        totalAmount: 48000,
+      };
+
+      function order_details() {
+        if (order1.totalAmount > order2.totalAmount) {
+          var display = document.getElementById("content");
+          display.innerText = "Order 1";
+          display.style.color = "blue";
+          display.style.textAlign = "center";
+          console.log(
+            "The Name Of Higher Ordered Customer Is " + order1.customerName
+          );
+          console.log("The Amount Of Higher Order Is " + order1.totalAmount);
+          console.log(
+            "The Total Of Two Orders " +
+              eval(order2.totalAmount + order1.totalAmount)
+          );
+        } else if (order1.totalAmount < order2.totalAmount) {
+          var display = document.getElementById("content");
+          display.innerText = "Order 2";
+          display.style.color = "blue";
+          display.style.textAlign = "center";
+          console.log(
+            "The Name Of Higher Ordered Customer Is " + order2.customerName
+          );
+          console.log("The Amount Of Higher Order Is " + order2.totalAmount);
+          console.log(
+            "The Total Of Two Orders " +
+              eval(order2.totalAmount + order1.totalAmount)
+          );
+        } else {
+          var display = document.getElementById("content");
+          display.innerText = "SORRY YOU HAVE ENTERED INCORRECT INPUT";
+          display.style.color = "black";
+          display.style.textAlign = "center";
+        }
+      }
+    </script>
+  </body>
+</html>
